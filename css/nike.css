@@ -1,16 +1,458 @@
 :root {
-    --main-color-1: black;
-    --main-color-2: yellow;
-    --main-color-3: white;
-    --main-color-4: gray;
+  --main-color-1: black;
+  --main-color-2: yellow;
+  --main-color-3: white;
+  --main-color-4: gray;
 
-  }
+}
 
 body {
-  background-color: var(--main-color-1);;
+  background-color: var(--main-color-1);
+  word-wrap: break-word !important;
+  margin: 0;
 }
- 
-.svg-logo, .svg-github, .svg-slack, .svg-twitter, .svg-open-collective {
+
+.svg-logo,
+.svg-github,
+.svg-slack,
+.svg-twitter,
+.svg-open-collective {
   fill: var(--main-color-2);
 }
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+h1 {
+  background-color: var(--main-color-2);
+  font-size: 60px;
+  text-align: center;
+  color: black;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+  color: #FFF;
+}
+
+h3 a {
+  color: #FFF;
+}
+
+a {
+  color: #FFF;
+}
+
+h1 {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Bree Serif', 'serif';
+}
+
+p {
+  text-align: center;
+}
+
+nav {
+  margin: 50px 0;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 0 10px;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+  /* the height of the main nav */
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover>ul {
+  display: inherit;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display:list-item;
+  position: relative;
+  background-color: var(--main-color-1);
+}
+
+/* Second, Third and more Tiers	*/
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 170px;
+}
+
+
+/* Change this in order to change the Dropdown symbol */
+li>a:after {
+  content: ' ▼';
+}
+
+li>a:only-child:after {
+  content: '';
+}
+
+.icon {
+  padding: 20px;
+}
+
+.header {
+  padding: 2%;
+}
+
+.annonce {
+  margin: 0;
+  z-index: 2;
+}
+
+.vitrine {
+  background-color: white;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.box {
+  aspect-ratio: 1/1;
+  width: calc(94%/3);
+  display: flex;
+  position: relative;
+  padding: 10px;
+}
+
+.prix,
+.nom {
+  position: absolute;
+  color: black;
+  background-color: var(--main-color-2);
+  padding: px;
+  box-shadow: 10px 10px;
+  top: 20px;
+  z-index: 2;
+}
+
+.nom {
+  padding: 5px;
+  right: 80px;
+  rotate: 10deg;
+}
+
+.prix {
+  left: 80px;
+  border-radius: 50px;
+  padding: 35px 10px;
+  rotate: -10deg;
+}
+
+.chaussure {
+  filter: grayscale();
+  transition: transform 0.3s ease;
+}
+
+.chaussure:hover {
+  filter: none;
+  transform: scale(1.2);
+}
+
+.boxLogo {
+  background-color: var(--main-color-2);
+}
+
+.slogan {
+  background-color: var(--main-color-1);
+  color: var(--main-color-2);
+  font-size: 80px;
+}
+
+.footerLogo {
+  width: 40%;
+  padding: 20px 0;
+}
+
+
+@media screen and (min-width:1200px) {
+
+  .svg-logo,
+  .svg-github,
+  .svg-slack,
+  .svg-twitter,
+  .svg-open-collective {
+    fill: var(--main-color-3);
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: black;
+    color: white;
+    border: solid 1px white;
+  }
+
+  .wall {
+    width: 100%;
+    margin: 0px;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .boxLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+  }
+
+  .slogan {
+    width: 60%;
+    text-align: center;
+  }
+
+}
+
+@media screen and (min-width:576px) and (max-width:1200px) {
+  .header {
+    padding: 0;
+  }
+  
+  .navigation {
+    background-color: var(--main-color-2);
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .logo {
+    background-color: var(--main-color-1);
+    display: flex;
+    justify-self: center;
+  }
+
+  nav {
+    margin:0;
+    padding: 10px;
+  }
+
+  .flexNav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .svg-github,
+  .svg-slack,
+  .svg-twitter,
+  .svg-open-collective {
+    fill: var(--main-color-1);
+  }
+
+  .btn {
+    background-color: var(--main-color-2);
+    color: black;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: black;
+    color: white;
+    border: solid 1px var(--main-color-2);
+  }
+
+  .wall {
+    display: none;
+  }
+
+  .annonce {
+    font-size: 30px;
+    padding: 15px;
+  }
+
+  .box{
+    width: calc(94%/2);
+    padding: 5px;
+  }
+
+  .vitrine {
+    padding: 50px 0;
+  }
+
+  .slogan, .boxLogo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  .prix {
+    left:20px;
+  }
+
+  .nom{
+    top:0;
+  }
+
+  .flexNav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .flexNav li {
+    width: 100%;
+  }
+
+  .flexNav li ul {
+    display: none;
+    position: static;
+    padding-left: 20px;
+    box-shadow: none;
+  }
+
+  .flexNav li:hover > ul {
+    display: block;
+  }
+
+}
+
+@media screen and (max-width:576px) {
+
+  .header {
+    padding: 0;
+  }
+  
+  .navigation {
+    background-color: var(--main-color-2);
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .logo {
+    background-color: var(--main-color-1);
+    display: flex;
+    justify-self: center;
+  }
+
+  nav {
+    margin:0;
+    padding: 10px;
+  }
+
+  .flexNav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .svg-github,
+  .svg-slack,
+  .svg-twitter,
+  .svg-open-collective {
+    fill: var(--main-color-1);
+  }
+
+  .btn {
+    background-color: var(--main-color-2);
+    color: black;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: black;
+    color: white;
+    border: solid 1px var(--main-color-2);
+  }
+
+  .wall {
+    display: none;
+  }
+
+  .box {
+    width: 100%;
+    padding: 0;
+    padding-top: 15px;
+  }
+
+  .slogan, .boxLogo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+  }
+  
+.annonce {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+  .flexNav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .flexNav li {
+    width: 100%;
+  }
+
+  .flexNav li ul {
+    display: none;
+    position: static;
+    padding-left: 20px;
+    box-shadow: none;
+  }
+
+  .flexNav li:hover > ul {
+    display: block;
+  }
+
+  .chaussure:hover {
+    filter: none;
+    transform: scale(1.1);
+  }
+
+}
